@@ -15,8 +15,6 @@ import filterSocket from '../SupportingModules/FilterSocket';
 const handleChange = (props, event) => {
     const checkboxLabel = props.text;
     const socket = filterSocket;
-    const selectionMessage = "FilterCheckbox: " + (event.target.checked ? "" : "un") + "checked " + props.tagId;
-    console.log(selectionMessage);
     socket.send(JSON.stringify({
         'type':'filterChange',
         'filterName': checkboxLabel,
